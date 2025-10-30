@@ -1,0 +1,151 @@
+/**
+ * Activity Dashboard Component Styles
+ * 
+ * Styles for the main dashboard container, loading states, and error states.
+ */
+
+.dashboard-container {
+  animation: fadeIn 0.5s ease-in;
+}
+
+/* Fade-in Animation for smooth appearance */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Dashboard Header */
+.dashboard-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background-color: var(--card-background);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+}
+
+.dashboard-header h2 {
+  font-size: 2rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.coordinates {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+/* Rankings Section */
+.rankings-section {
+  margin-top: 2rem;
+}
+
+.rankings-section h3 {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.section-description {
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+/* Activity Grid - Responsive grid layout */
+.activity-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+/* Loading State Styles */
+.loading {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.loading p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  margin-top: 1rem;
+}
+
+/* Spinner Animation */
+.spinner {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+  border: 4px solid var(--border-color);
+  border-top-color: var(--primary-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Error State Styles */
+.error {
+  text-align: center;
+  padding: 3rem 1rem;
+  background-color: #fef2f2;
+  border: 2px solid #fecaca;
+  border-radius: 16px;
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+.error h2 {
+  color: var(--danger-color);
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.error p {
+  color: #991b1b;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.error-hint {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+/* Responsive Design - Tablet */
+@media (max-width: 768px) {
+  .activity-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .rankings-section h3 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Responsive Design - Mobile */
+@media (max-width: 480px) {
+  .dashboard-header {
+    padding: 1rem;
+  }
+
+  .dashboard-header h2 {
+    font-size: 1.25rem;
+  }
+}

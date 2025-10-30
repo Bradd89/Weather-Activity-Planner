@@ -1,0 +1,126 @@
+/**
+ * Weather Summary Component Styles
+ * 
+ * Styles for the weather overview section with summary cards.
+ */
+
+.weather-summary {
+  background-color: var(--card-background);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow);
+}
+
+.weather-summary h3 {
+  font-size: 1.75rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.date-range {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Summary Grid - Responsive grid for weather cards */
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Individual Summary Card */
+.summary-card {
+  background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.25rem;
+  transition: all 0.3s ease;
+  display: flex;
+  gap: 1rem;
+}
+
+.summary-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+/* Card Icon */
+.card-icon {
+  font-size: 2.5rem;
+  flex-shrink: 0;
+}
+
+/* Card Content */
+.card-content {
+  flex: 1;
+}
+
+.card-content h4 {
+  font-size: 1rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+/* Statistics Text Hierarchy */
+.primary-stat {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.secondary-stat {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.25rem;
+}
+
+.tertiary-stat {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-style: italic;
+  opacity: 0.8;
+}
+
+/* Responsive Design - Tablet */
+@media (max-width: 768px) {
+  .weather-summary {
+    padding: 1.5rem;
+  }
+
+  .summary-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+  }
+
+  .summary-card {
+    padding: 1rem;
+  }
+
+  .card-icon {
+    font-size: 2rem;
+  }
+}
+
+/* Responsive Design - Mobile */
+@media (max-width: 480px) {
+  .weather-summary {
+    padding: 1rem;
+  }
+
+  .weather-summary h3 {
+    font-size: 1.5rem;
+  }
+
+  .summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .summary-card {
+    flex-direction: row;
+  }
+}

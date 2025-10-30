@@ -1,0 +1,171 @@
+/**
+ * Activity Card Component Styles
+ * 
+ * Styles for individual activity ranking cards.
+ * Uses card-based design with shadows and hover effects.
+ */
+
+.activity-card {
+  background-color: var(--card-background);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+  border: 1px solid var(--border-color);
+}
+
+/* Card Hover Effect - subtle lift on hover */
+.activity-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Card Header Section */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.activity-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.activity-icon {
+  font-size: 2rem;
+}
+
+.activity-title h4 {
+  font-size: 1.25rem;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* Score Badge */
+.score-badge {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  min-width: 60px;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+/* Recommendation Text */
+.recommendation {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  padding: 0.75rem;
+  background-color: var(--background-color);
+  border-radius: 8px;
+  border-left: 4px solid var(--primary-color);
+}
+
+/* Chart Container */
+.chart-container {
+  margin-bottom: 1.5rem;
+}
+
+.chart-container h5 {
+  font-size: 1rem;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+/* Daily Breakdown Section */
+.daily-breakdown h5 {
+  font-size: 1rem;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.daily-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* Individual Daily Item */
+.daily-item {
+  display: grid;
+  grid-template-columns: 80px 1fr 100px;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem;
+  background-color: var(--background-color);
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.daily-item:hover {
+  background-color: #f3f4f6;
+}
+
+.daily-date {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* Score Bar Visualization */
+.daily-score-bar {
+  height: 8px;
+  background-color: #e5e7eb;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.score-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+
+.daily-conditions {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-align: right;
+}
+
+/* Responsive Design - Mobile */
+@media (max-width: 480px) {
+  .activity-card {
+    padding: 1rem;
+  }
+
+  .card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .score-badge {
+    align-self: flex-start;
+  }
+
+  .daily-item {
+    grid-template-columns: 70px 1fr 80px;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+  }
+
+  .activity-icon {
+    font-size: 1.5rem;
+  }
+
+  .activity-title h4 {
+    font-size: 1.1rem;
+  }
+}

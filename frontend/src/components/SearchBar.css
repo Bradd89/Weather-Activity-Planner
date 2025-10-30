@@ -1,0 +1,84 @@
+/**
+ * SearchBar Component Styles
+ * 
+ * Styles for the location search input component.
+ * Uses modern form styling with focus states and transitions.
+ */
+
+.search-bar {
+  margin-bottom: 2rem;
+}
+
+.search-input-group {
+  display: flex;
+  gap: 0.75rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Input Field Styles */
+.search-input {
+  flex: 1;
+  padding: 0.875rem 1rem;
+  font-size: 1rem;
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  outline: none;
+  transition: all 0.3s ease;
+  background-color: var(--card-background);
+}
+
+/* Input Focus State - provides visual feedback */
+.search-input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Input Placeholder Styling */
+.search-input::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.6;
+}
+
+/* Button Styles */
+.search-button {
+  padding: 0.875rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow);
+}
+
+/* Button Hover State */
+.search-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Button Active/Click State */
+.search-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+/* Button Disabled State */
+.search-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Responsive Design - Mobile */
+@media (max-width: 480px) {
+  .search-input-group {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .search-button {
+    width: 100%;
+  }
+}
